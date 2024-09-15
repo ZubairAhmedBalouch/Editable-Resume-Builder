@@ -5,9 +5,6 @@ body {
     background-image: url(bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    
-
-
 }
 
 form {
@@ -94,7 +91,6 @@ button:hover {
         padding: 10px; /* Further reduction in padding */
     }
 }
-
 
 
 #resume-display {
