@@ -1,4 +1,5 @@
 // Getting Refrences to the form and display area
+const profilepictureinput = document.getElementById('profilepicture') as HTMLInputElement | null
 const form = document.getElementById('resume-form') as HTMLFormElement
 const resumeDisplayelement = document.getElementById('resume-display') as HTMLDivElement
 
@@ -17,9 +18,14 @@ form.addEventListener('submit', (event: Event) => {
     const experience = (document.getElementById('experience') as HTMLInputElement).value;
     const skills = (document.getElementById('skills') as HTMLInputElement).value;
 
+    //Profile picture elements
+    const profilepicturefile = profilepictureinput?.files?.[0]
+    const profilepictureURL = profilepicturefile ? URL.createObjectURL(profilepicturefile) : '';
+
     //Generate the resume details dynamically
     const resumeHTML=`
     <h2><b><center><u>Editable Resume</u></b></h2>
+    ${profilepictureURL ? `<img src="${profilepictureURL}" alt="Profile Picture" class="profilepicture">` : ''}
     <h3>Personal Information</h3>
     <p><b>Name: </b><span contenteditable="true">${name}</span></p> 
     <p><b>F/Name: </b><span contenteditable="true">${fname}</span></p>
